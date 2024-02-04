@@ -118,6 +118,34 @@ for (let i = 0; i < filterBtn.length; i++) {
   });
 
 }
+//service modal
+document.addEventListener('DOMContentLoaded', function () {
+  const serviceLinks = document.querySelectorAll('.service-item-link');
+  const modalContainers = document.querySelectorAll('.service-item-modal-container');
+
+  serviceLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      const targetModalId = link.getAttribute('data-target');
+      const targetModal = document.getElementById(targetModalId);
+
+      if (targetModal) {
+        modalContainers.forEach(function (container) {
+          container.style.display = 'none';
+        });
+
+        targetModal.style.display = 'block';
+      }
+    });
+  });
+
+  modalContainers.forEach(function (container) {
+    container.addEventListener('click', function () {
+      container.style.display = 'none';
+    });
+  });
+});
+
 
 // project modal variables
 const projectModalContainer = document.getElementById('projectModalContainer');

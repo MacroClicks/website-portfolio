@@ -271,43 +271,77 @@
           <h3 class="h3 service-title">What i'm doing</h3>
 
           <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/Video Editing.png
-                " alt="video icon" width="37">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Video Editing</h4>
-
-                <p class="service-item-text">
-                  I create high-quality, engaging and visually stunning video content that captivates audiences.
-                </p>
-              </div>
-
+            
+            <li class="service-item" data-service-item>
+              <a href="#" class="service-item-link" data-target="videoEditingModal">
+                <div class="service-icon-box">
+                  <img src="./assets/images/Video Editing.png" alt="video icon" width="37">
+                </div>
+          
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Video Editing</h4>
+                  <p class="service-item-text">
+                    I create high-quality, engaging and visually stunning video content that captivates audiences.
+                  </p>
+                </div>
+              </a>
             </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/graphics.png" alt="graphics icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Graphic Design</h4>
-
-                <p class="service-item-text">
-                  I make high-quality design at a professional level that elevates your brand.
-                </p>
-              </div>
-
+          
+            <li class="service-item" data-service-item>
+              <a href="#" class="service-item-link" data-target="graphicDesignModal">
+                <div class="service-icon-box">
+                  <img src="./assets/images/graphics.png" alt="graphics icon" width="40">
+                </div>
+          
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Graphic Design</h4>
+                  <p class="service-item-text">
+                    I make high-quality design at a professional level that elevates your brand.
+                  </p>
+                </div>
+              </a>
             </li>
-
           </ul>
 
         </section>
+
+          <!--
+          - Service modal
+        -->
+        <div class="service-item-modal-container" id="videoEditingModal">
+          <div class="service-item-modal">
+            <div class="service-item-modal-content">
+              <div class="service-icon-box">
+                <img src="./assets/images/Video Editing.png" alt="video icon" width="40">
+              </div>
+              <div class="service-item-modal-text">
+                <h4 class="h4 service-item-title">Video Editing</h4>
+                <p class="service-item-text">
+                  Detailed information about video editing service.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="service-item-modal-container" id="graphicDesignModal">
+          <div class="service-item-modal">
+            <div class="service-item-modal-content">
+              <div class="service-icon-box">
+                <img src="./assets/images/graphics.png" alt="graphics icon" width="40">
+              </div>
+              <div class="service-item-modal-text">
+                <h4 class="h4 service-item-title">Graphic Design</h4>
+                <p class="service-item-text">
+                  Detailed information about graphic design service.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
 
 
         <!--
@@ -705,7 +739,7 @@
                       <div class="project-item-icon-box">
                           <ion-icon name="eye-outline"></ion-icon>
                       </div>
-                      <img src="./assets/images/Thumbnail 2.png" alt="finance" loading="lazy">
+                      <img src="./assets/images/Thumbnail 2.png" alt="Ads" loading="lazy">
                   </figure>
                   <h3 class="project-title">Thumbnail</h3>
                   <p class="project-category">Graphic Design</p>
@@ -719,7 +753,7 @@
                     <div class="project-item-icon-box">
                         <ion-icon name="eye-outline"></ion-icon>
                     </div>
-                    <img src="./assets/images/Ads 2.JPG" alt="finance" loading="lazy">
+                    <img src="./assets/images/Ads 2.JPG" alt="Ads" loading="lazy">
                 </figure>
                 <h3 class="project-title">Advertisement</h3>
                 <p class="project-category">Graphic Design</p>
@@ -733,7 +767,7 @@
                   <div class="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                   </div>
-                  <img src="./assets/images/Blog Banner.png" alt="finance" loading="lazy">
+                  <img src="./assets/images/Blog Banner.png" alt="Banner" loading="lazy">
               </figure>
               <h3 class="project-title">Blog Banner</h3>
               <p class="project-category">Graphic Design</p>
@@ -742,12 +776,12 @@
 
 
       <li class="project-item active" data-filter-item data-category="graphic design">
-        <a href="#" onclick="openProjectModal('./assets/images/Social post.jpg', 'Social media post', 'Graphic Design')">
+        <a href="#" onclick="openProjectModal('./assets/images/Social post.png', 'Social media post', 'Graphic Design')">
             <figure class="project-img">
                 <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                 </div>
-                <img src="./assets/images/Social post.jpg" alt="finance" loading="lazy">
+                <img src="./assets/images/Social post.png" alt="Ads" loading="lazy">
             </figure>
             <h3 class="project-title">Social Media post</h3>
             <p class="project-category">Graphic Design</p>
@@ -761,7 +795,7 @@
               <div class="project-item-icon-box">
                   <ion-icon name="eye-outline"></ion-icon>
               </div>
-              <img src="./assets/images/Ads 1.png" alt="finance" loading="lazy">
+              <img src="./assets/images/Ads 1.png" alt="Ads" loading="lazy">
           </figure>
           <h3 class="project-title">Advertisement</h3>
           <p class="project-category">Graphic Design</p>

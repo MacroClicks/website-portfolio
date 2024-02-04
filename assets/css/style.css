@@ -3,8 +3,10 @@
 \*-----------------------------------*/
 
 
-/**
- * copyright 2022 @codewithsadee
+
+
+ /**
+ * Modify by Marco Coralde
  */
 
 
@@ -533,6 +535,12 @@ main {
   border-radius: 14px;
   box-shadow: var(--shadow-2);
   z-index: 1;
+  transition: transform 0.5s ease;
+}
+
+.service-item:hover {
+  transform: scale(1.1); /* Scale up on hover (adjust the scale factor as needed) */
+
 }
 
 .service-item::before {
@@ -544,11 +552,11 @@ main {
   z-index: -1;
 }
 
-.service-icon-box { margin-bottom: 10px; }
+.service-icon-box { margin-right: 20px; }
 
 .service-icon-box img { margin: auto; }
 
-.service-content-box { text-align: center; }
+.service-content-box { text-align: left; }
 
 .service-item-title { margin-bottom: 7px; }
 
@@ -557,6 +565,55 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-3);
   line-height: 1.6;
+}
+
+/**
+ * #service modal 
+ */
+
+.service-item-modal-container {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.service-item-modal {
+  display: block;
+  width: 80%;
+  max-width: 500px;
+  padding: 30px;
+  background: var(--eerie-black-2);
+  border-radius: 14px;
+  border: 1px solid var(--jet);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  
+  
+  
+}
+
+
+
+.service-item-modal-content {
+  display: flex;
+  align-items: center;
+}
+
+.service-item-modal-text {
+  margin-left: 20px;
+}
+
+.service-item-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
 }
 
 
@@ -1578,6 +1635,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .service-content-box { text-align: left; }
+
+  
 
   /* testimonials */
 
