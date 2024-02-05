@@ -358,6 +358,7 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
+  
 }
 
 .info_more-btn {
@@ -540,6 +541,7 @@ main {
 
 .service-item:hover {
   transform: scale(1.1); /* Scale up on hover (adjust the scale factor as needed) */
+  z-index: 100;
 
 }
 
@@ -554,7 +556,7 @@ main {
 
 .service-icon-box { margin-right: 20px; }
 
-.service-icon-box img { margin: auto; }
+.service-icon-box img { margin: auto;  }
 
 .service-content-box { text-align: left; }
 
@@ -585,7 +587,7 @@ main {
 .service-item-modal {
   display: block;
   width: 80%;
-  max-width: 500px;
+  max-width: 630px;
   padding: 30px;
   background: var(--eerie-black-2);
   border-radius: 14px;
@@ -594,9 +596,37 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
+  overflow-y: auto; /* Add this line to allow scrolling if content exceeds space */
+  
+ 
   
   
+}
+
+
+.specific-service {
+  font-weight: 500;
+  font-size: var(--fs-7); 
+  color: var(--white-2);
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 30px;
+  white-space: pre-line; /* Preserve line breaks */
+}
+
+
+.service-icon-box-modal{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 56.5%;
+  transform: translateX(-56.5%);
   
+    
+
 }
 
 
@@ -604,10 +634,14 @@ main {
 .service-item-modal-content {
   display: flex;
   align-items: center;
+ 
+  
 }
 
 .service-item-modal-text {
   margin-left: 20px;
+  margin-top: 40px;
+  text-align: center;
 }
 
 .service-item-link {
@@ -615,6 +649,36 @@ main {
   color: inherit;
   display: flex;
 }
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--onyx);
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light-gray);
+  font-size: 18px;
+  z-index: 1000; /* Adjust the value as needed */
+  opacity: 0.7;
+  cursor: pointer;
+  transition: color 0.3s; /* Adding a smooth transition effect */
+  transition: opacity 0.3s;
+  
+
+  }
+
+
+
+.close-modal:hover {
+    transform: scale(1.1); /* Scale up on hover (adjust the scale factor as needed) */
+    color: var(--white-1);
+    opacity: 1;
+  }
 
 
 /**
@@ -1162,7 +1226,8 @@ main {
 
   .project-modal {
     background-color: var(--eerie-black-2);
-    border-radius: 8px;
+    border-radius: 14px;
+    border: 1px solid var(--jet);
     padding: 20px;
     max-width: 95%;
     max-height: 95%;
@@ -1459,6 +1524,28 @@ textarea.form-input::-webkit-resizer { display: none; }
   #RESPONSIVE
 \*-----------------------------------*/
 
+
+/* Media query for smaller screens */
+@media (max-width: 450px) {
+  .service-icon-box-modal {
+    left: 8.5%;
+    transform: translateX(8.5%);
+  }
+}
+
+/* Media query for larger screens (adjust the max-width as needed) */
+@media (min-width: 580px) {
+  .service-icon-box-modal {
+    left: 8.5%;
+    transform: translateX(8.5%);
+  }
+}
+
+
+ 
+  
+
+
 /**
  * responsive larger than 450px screen
  */
@@ -1635,6 +1722,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .service-content-box { text-align: left; }
+  .service-item-modal-text{ text-align: left; }
 
   
 

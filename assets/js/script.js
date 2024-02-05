@@ -131,20 +131,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (targetModal) {
         modalContainers.forEach(function (container) {
-          container.style.display = 'none';
+          container.style.display = container.id === targetModalId ? 'block' : 'none';
         });
-
-        targetModal.style.display = 'block';
       }
     });
   });
 
   modalContainers.forEach(function (container) {
-    container.addEventListener('click', function () {
-      container.style.display = 'none';
+    container.addEventListener('click', function (event) {
+      if (event.target === container) {
+        container.style.display = 'none';
+      }
     });
   });
 });
+
+function closeModal(modalId) {
+  const targetModal = document.getElementById(modalId);
+  if (targetModal) {
+    targetModal.style.display = 'none';
+  }
+}
 
 
 // project modal variables
