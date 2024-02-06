@@ -1528,8 +1528,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 /* Media query for smaller screens */
 @media (max-width: 450px) {
   .service-icon-box-modal {
-    left: 8.5%;
-    transform: translateX(8.5%);
+    left: 56.5%;
+    transform: translateX(-56.5%);
+  
   }
 }
 
