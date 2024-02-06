@@ -610,7 +610,6 @@ main {
   color: var(--white-2);
   line-height: 1.5rem;
   margin-bottom: 0.5rem;
-  margin-top: 30px;
   white-space: pre-line; /* Preserve line breaks */
 }
 
