@@ -569,6 +569,12 @@ main {
   line-height: 1.6;
 }
 
+.see-more {
+  color: rgb(80, 80, 81); /* Change to the color you prefer */
+  font-weight: bold; /* Optional: Add font-weight for emphasis */
+  /* Add any other styling you want */
+}
+
 /**
  * #service modal 
  */
