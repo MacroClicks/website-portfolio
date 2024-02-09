@@ -154,7 +154,7 @@ function closeModal(modalId) {
 }
 
 
-// project modal variables
+// Project modal variables
 const projectModalContainer = document.getElementById('projectModalContainer');
 const projectModalTitle = document.getElementById('projectModalTitle');
 const projectModalCategory = document.getElementById('projectModalCategory');
@@ -165,76 +165,66 @@ const closeModalBtn = document.querySelector('.close-modal-btn');
 projectModalContainer.addEventListener('click', function (event) {
   // Check if the click occurred outside the modal content (within the container)
   if (event.target === projectModalContainer) {
-      closeProjectModal();
+    closeProjectModal();
   }
 });
 
 // Add an event listener for the close button
 closeModalBtn.addEventListener('click', closeProjectModal);
 
-
-
 // Function to open the project modal
-function openProjectModal(src, title, category, isVideo = false) {
-    projectModalTitle.textContent = title;
-    projectModalCategory.textContent = category;
+// Function to open the project modal
+function openProjectModal(src, title, category, isVideo = false, isGif = false) {
+  projectModalTitle.textContent = title;
+  projectModalCategory.textContent = category;
 
-    // Clear previous content in mediaContainer
-    mediaContainer.innerHTML = '';
+  // Clear previous content in mediaContainer
+  mediaContainer.innerHTML = '';
 
-    // Create media element based on whether it's an image or video
-    const mediaElement = isVideo ? document.createElement('video') : document.createElement('img');
-    mediaElement.src = src;
-    mediaElement.alt = 'Project Media';
-
-     // Add landscape or portrait class based on aspect ratio
-     if (!isVideo) {
-      const aspectRatio = mediaElement.width / mediaElement.height;
-      if (aspectRatio >= 1) {
-          mediaElement.classList.add('landscape');
-      } else {
-          mediaElement.classList.add('portrait');
-      }
+  // Create media element based on whether it's an image, video or gif
+  let mediaElement;
+  if (isVideo) {
+    mediaElement = document.createElement('video');
+    mediaElement.controls = true;
+    mediaElement.autoplay = true;
+  } else {
+    mediaElement = document.createElement('img');
+    // Apply styles for images
+    mediaElement.style.borderRadius = '8px';
   }
 
-    // Set attributes for video element
-    if (isVideo) {
-        mediaElement.controls = true;
-        mediaElement.autoplay = true;
+  // Set attributes for media element
+  mediaElement.src = src;
+  mediaElement.alt = 'Project Media';
 
-        
+  // Add landscape or portrait class based on aspect ratio
+  mediaElement.onload = function () {
+    const aspectRatio = mediaElement.width / mediaElement.height;
+    mediaElement.classList.add(aspectRatio >= 1 ? 'landscape' : 'portrait');
+  };
 
-        // Determine video orientation and apply corresponding styles
-        const videoWidth = mediaElement.videoWidth;
-        const videoHeight = mediaElement.videoHeight;
+  // Add error handling for video element creation
+  if (isVideo) {
+    mediaElement.onerror = function () {
+      console.error('Error loading video:', src);
+    };
+  }
 
-        if (videoWidth > videoHeight) {
-            // Landscape video
-            mediaElement.classList.add('landscape');
-        } else {
-            // Portrait video
-            mediaElement.classList.add('portrait');
-        }
-    } else {
-        // Apply styles for images
-        mediaElement.style.borderRadius = '8px';
-    }
+  // Append media element to the mediaContainer
+  mediaContainer.appendChild(mediaElement);
 
-    // Append media element to the mediaContainer
-    mediaContainer.appendChild(mediaElement);
-
-    projectModalContainer.style.display = 'flex';
+  projectModalContainer.style.display = 'flex';
 }
 
 // Function to close the project modal
 function closeProjectModal() {
-    projectModalContainer.style.display = 'none';
+  projectModalContainer.style.display = 'none';
 
-    // Pause video when closing modal
-    const videoElement = mediaContainer.querySelector('video');
-    if (videoElement) {
-        videoElement.pause();
-    }
+  // Pause video when closing modal
+  const videoElement = mediaContainer.querySelector('video');
+  if (videoElement) {
+    videoElement.pause();
+  }
 }
 
 
