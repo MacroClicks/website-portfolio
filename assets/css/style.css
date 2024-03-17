@@ -334,10 +334,7 @@ main {
 }
 
 .avatar-box {
-  background: var(--bg-gradient-onyx);
-  border-radius: 20px;
-  position: relative; /* Position for centering */
-  overflow: hidden; /* Hide any image overflow */
+ 
 }
 
 
@@ -1659,8 +1656,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   .sidebar.active { max-height: 584px; }
 
   .sidebar-info { gap: 25px; }
-
-  .avatar-box { border-radius: 30px; }
 
   .avatar-box img { width: 120px; }
 
