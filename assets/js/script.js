@@ -194,8 +194,10 @@ function openProjectModal(src, title, category, isVideo = false, isGif = false) 
   }
 
   // Set attributes for media element
-  mediaElement.src = src;
-  mediaElement.alt = 'Project Media';
+  
+    mediaElement.src = src;
+    mediaElement.alt = 'Project Media';
+
 
   // Add landscape or portrait class based on aspect ratio
   mediaElement.onload = function () {
@@ -279,7 +281,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-
 
 
 
